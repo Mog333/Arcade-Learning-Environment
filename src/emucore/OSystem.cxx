@@ -417,10 +417,10 @@ bool OSystem::createConsole(const string& romfile)
         cerr << "Game console created:" << endl
              << "  ROM file:  " << myRomFile << endl
              << myConsole->about() << endl;
-      else
-        ale::Logger::Info << "Game console created:" << endl
-             << "  ROM file:  " << myRomFile << endl
-             << myConsole->about() << endl;
+      // else
+      //   ale::Logger::Info << "Game console created:" << endl
+      //        << "  ROM file:  " << myRomFile << endl
+      //        << myConsole->about() << endl;
 
       // Update the timing info for a new console run
       resetLoopTiming();

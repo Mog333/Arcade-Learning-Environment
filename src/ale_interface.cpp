@@ -83,7 +83,7 @@ void ALEInterface::loadSettings(const string& romfile,
               << std::endl;
     exit(1);
   } else if (theOSystem->createConsole(romfile))  {
-    Logger::Info << "Running ROM file..." << std::endl;
+    // Logger::Info << "Running ROM file..." << std::endl;
     theOSystem->settings().setString("rom_file", romfile);
   } else {
     exit(1);
@@ -91,7 +91,7 @@ void ALEInterface::loadSettings(const string& romfile,
 
   // Must force the resetting of the OSystem's random seed, which is set before we change
   // choose our random seed.
-  Logger::Info << "Random seed is " << theOSystem->settings().getInt("random_seed") << std::endl; 
+  // Logger::Info << "Random seed is " << theOSystem->settings().getInt("random_seed") << std::endl; 
   theOSystem->resetRNGSeed();
 
   string currentDisplayFormat = theOSystem->console().getFormat();
@@ -100,13 +100,13 @@ void ALEInterface::loadSettings(const string& romfile,
 
 ALEInterface::ALEInterface() {
   disableBufferedIO();
-  Logger::Info << welcomeMessage() << std::endl;
+  // Logger::Info << welcomeMessage() << std::endl;
   createOSystem(theOSystem, theSettings);
 }
 
 ALEInterface::ALEInterface(bool display_screen) {
   disableBufferedIO();
-  Logger::Info << welcomeMessage() << std::endl;
+  // Logger::Info << welcomeMessage() << std::endl;
   createOSystem(theOSystem, theSettings);
   this->setBool("display_screen", display_screen);
 }
